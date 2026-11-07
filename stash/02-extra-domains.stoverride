@@ -1,0 +1,5 @@
+name: 开屏广告补充 · 域名
+desc: 两条广告域名补充。可在覆写列表单独关闭。
+rules:
+- DOMAIN,c3.gdt.qq.com,REJECT
+- DOMAIN,cpro.baidu.com,REJECT

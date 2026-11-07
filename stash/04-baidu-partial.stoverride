@@ -1,0 +1,12 @@
+# Selected and adapted URL patterns: https://github.com/Thelongdarkorg/loon-plugins/blob/main/baidunetdisk_splash_ad_block.plugin
+name: BaiduSplashFix
+desc: 已在手机加载并命中部分接口，但百度和网盘冷启动仍有开屏，尚未修复。
+rules:
+- DOMAIN,afd.baidu.com,REJECT
+- AND,((DOMAIN,pan.baidu.com),(PROTOCOL,QUIC)),REJECT
+http:
+  url-rewrite:
+  - ^https://pan\.baidu\.com/buy/ad/(?:conf|get|analytics)(?:[/?]|$) - reject-dict
+  - ^https://pan\.baidu\.com/rest/[0-9]+\.[0-9]+/pcs/ad(?:v|x)?(?:[/?]|$) - reject-dict
+  - ^https://pan\.baidu\.com/rest/2\.0/membership/advertise/dsp(?:[/?]|$) - reject-dict
+  - ^https://pan\.baidu\.com/api/analytics\?(?:[^&#]*&)*[A-Za-z0-9_]+\x3d[^&#]*(?:splash|bidding)[^&#]*(?:[&#]|$) - reject-dict

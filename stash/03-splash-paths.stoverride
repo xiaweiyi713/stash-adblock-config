@@ -1,0 +1,13 @@
+# Selected and adapted URL patterns: https://github.com/Walvez/surge-startup-ads/blob/main/dist/StartUpAds_Selected.sgmodule
+name: Splash3
+desc: 三个主机的开屏路径规则。虎扑、菜鸟在日常测试中有效；百度网盘仍有残留。
+http:
+  mitm:
+  - cn-acs.m.cainiao.com
+  - goblin.hupu.com
+  - pan.baidu.com
+  url-rewrite:
+  - ^https?://cn-acs\.m\.cainiao\.com/gw/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.(?:show|mshow)\.cn(?:[/?]|$) - reject-200
+  - ^https?://goblin\.hupu\.com/(?:[^/?]+/)+interfaceAd/getOther(?:[/?]|$) - reject-200
+  - ^https?://pan\.baidu\.com/rest/2\.0/pcs/ad(?:[/?]|$) - reject-200
+  - ^https://pan\.baidu\.com/buy/ad/conf\?(?:[^&#]*&)*type\x3dsplashMode(?:[&#]|$) - reject-dict

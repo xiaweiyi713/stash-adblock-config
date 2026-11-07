@@ -1,0 +1,14 @@
+# Archived test. Do not import as part of the daily-use setup.
+# Selected URL patterns: https://github.com/wxs0625/loon-plugins/blob/main/blockAds_all.plugin
+name: BaiduAppSplash
+desc: 失败实验归档：两条测试 URL 命中，但实际开屏仍在；日常配置中停用。
+rules:
+- AND,((DOMAIN,cover.baidu.com),(PROTOCOL,QUIC)),REJECT
+- AND,((DOMAIN,baichuan.baidu.com),(PROTOCOL,QUIC)),REJECT
+http:
+  mitm:
+  - cover.baidu.com
+  - baichuan.baidu.com
+  url-rewrite:
+  - ^https?://cover\.baidu\.com/cover/page/dspSwitchAds(?:[/?]|$) - reject
+  - ^https?://baichuan\.baidu\.com/rs/adpmobile/launch(?:[/?]|$) - reject

@@ -1,0 +1,18 @@
+# Allow only the files intended for this repository.
+*
+!/.gitignore
+!/README.md
+!/THIRD_PARTY.md
+!/LICENSE.AWAvenue-Ads-Rule
+!/SHA256SUMS
+!/stash/
+!/stash/01-awavenue-ads.stoverride
+!/stash/02-extra-domains.stoverride
+!/stash/03-splash-paths.stoverride
+!/stash/04-baidu-partial.stoverride
+!/stash/Stash-Adblock.stoverride
+!/docs/
+!/docs/system-dns.md
+!/docs/verification.md
+!/experimental/
+!/experimental/disabled-baidu-app-two-hosts.stoverride
