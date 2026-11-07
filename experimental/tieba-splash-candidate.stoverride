@@ -1,0 +1,11 @@
+# Source https://github.com/app2smile/rules/blob/master/js/tieba-json.js
+# Enabling this override adds tiebac.baidu.com to local HTTPS inspection.
+name: 贴吧开屏候选
+desc: 仅改写开屏接口。启用后在本机检查 tiebac.baidu.com 的 HTTPS 流量。
+rules:
+- AND,((DOMAIN,tiebac.baidu.com),(PROTOCOL,QUIC)),REJECT
+http:
+  mitm:
+  - tiebac.baidu.com
+  body-rewrite:
+  - ^https://tiebac\.baidu\.com/c/f/ad/getSplashAd/?(?:\?|$) response-jq if .error_code == 0 then (.error_code = 2230209 | .data = null) else . end

@@ -2,7 +2,7 @@
 
 适用于 iPhone 和 iPad。保留现有 Stash 主配置，把这里的文件作为**覆写**导入。合并版包含 669 条分流规则、8 条 URL 改写，以及 3 个指定的 HTTPS 检查主机。
 
-虎扑和菜鸟在 iPhone 实测中已观察到开屏减少。百度和百度网盘仍有开屏残留，详见[验证记录](docs/verification.md)。
+虎扑和菜鸟在 iPhone 实测中已观察到开屏减少。用户最近反馈百度 App 未再出现开屏，百度网盘仍有残留。[验证记录](docs/verification.md)
 
 ## 导入方式
 
@@ -25,6 +25,14 @@
 - 路径规则只检查 `cn-acs.m.cainiao.com`、`goblin.hupu.com`、`pan.baidu.com` 三个主机；不需要安装远程脚本。
 - 遇到误拦时，关闭合并版或相关独立覆写再复测。主配置、节点订阅和 DNS 可继续沿用。
 - [系统 DNS 说明](docs/system-dns.md)是可选项。系统 DNS 的域名过滤无法替代 Stash 的 HTTPS 路径规则。
+
+## 待验证覆写
+
+以下三份覆写已通过离线检查，手机实测待安排。需要时单独导入和启用，方便核对每份规则的效果。
+
+- 百度贴吧只改写开屏接口响应。启用会将 `tiebac.baidu.com` 加入本机 HTTPS 解密范围。[贴吧开屏候选](experimental/tieba-splash-candidate.stoverride)
+- 百度网盘补拦活动入口，沿用已有的 `pan.baidu.com` 解密设置。[网盘活动候选](experimental/netdisk-activity-candidate.stoverride)
+- 中国电信拦截四个候选广告域名，无需 HTTPS 解密。[电信开屏候选](experimental/china-telecom-splash-candidate.stoverride)
 
 [停用的百度两主机测试](experimental/disabled-baidu-app-two-hosts.stoverride)只作记录，日常导入时跳过。仓库只保存规则与说明，不保存主代理配置、机场订阅、节点凭据、设备证书或原始请求日志。
 

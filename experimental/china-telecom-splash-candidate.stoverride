@@ -1,0 +1,8 @@
+# Source https://github.com/BlueGrave/Surge/blob/master/Module/WhiteList.sgmodule
+name: 中国电信开屏候选
+desc: 拦截四个候选广告主机。独立覆写，无需 HTTPS 解密。
+rules:
+- DOMAIN,ad.21cn.com,REJECT
+- DOMAIN,ad.k.21cn.com,REJECT
+- DOMAIN,admarket.21cn.com,REJECT
+- DOMAIN,adshows.21cn.com,REJECT

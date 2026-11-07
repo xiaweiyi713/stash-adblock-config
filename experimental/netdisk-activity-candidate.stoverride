@@ -1,0 +1,7 @@
+# Source https://github.com/Walvez/surge-startup-ads/blob/main/dist/StartUpAds_Selected.sgmodule
+# Uses the existing pan.baidu.com MitM coverage provided by Splash3.
+name: 网盘活动开屏候选
+desc: 只补拦活动入口。依赖原有 pan.baidu.com HTTPS 检查。
+http:
+  url-rewrite:
+  - ^https?://pan\.baidu\.com/act/api/activityentry/?(?:\?|$) - reject-dict

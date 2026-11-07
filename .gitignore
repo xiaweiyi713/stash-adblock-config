@@ -16,3 +16,6 @@
 !/docs/verification.md
 !/experimental/
 !/experimental/disabled-baidu-app-two-hosts.stoverride
+!/experimental/tieba-splash-candidate.stoverride
+!/experimental/netdisk-activity-candidate.stoverride
+!/experimental/china-telecom-splash-candidate.stoverride
